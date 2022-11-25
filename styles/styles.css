@@ -1,0 +1,240 @@
+
+/* page-index
+1- body elements
+2- page elements
+3- LInks
+4-Components
+5- header
+6- section
+7- footer
+
+ */
+
+
+/* elements */
+
+html {
+	scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion){
+	html{
+		scroll-behavior: normal;
+	}
+}
+
+/* page elemets */
+
+a.nav-menu:active{
+       color: antiquewhite;
+}
+
+
+.site-main p{
+    position: relative;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Kdam Thmor Pro', sans-serif;	
+    font-size: 9rem;
+    font-weight:bolder;
+    opacity: 70%;
+    z-index: 4;
+}
+        
+   
+
+
+
+
+.site-wrapper {
+	max-width: 120rem;
+	margin: 0 auto;
+}
+
+.site-header {
+	
+	padding: 0 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+    position: relative;
+    top: 0;
+    z-index: 5;
+    
+}
+
+
+
+a.site-name {
+    font-family: 'Kdam Thmor Pro', sans-serif;	font-size: 2rem;
+	font-weight: 700;
+	text-decoration: none;
+	color: #020000;
+}
+
+
+
+.site-navigation ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	display: none;
+	position: absolute;
+	top: 4rem;  
+	left: 0;
+	right: 0;
+	
+    background-color: rgb(255, 252, 252);
+	
+}
+ .site-navigation li:hover::after{
+	width: 6rem;
+  height: 1px;
+  background-color: rgb(0, 0, 0);
+
+}
+ .site-navigation li::after{
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 1px;
+	display: block;
+	transition: all 0.3s ease;
+	bottom: 25%;
+}
+
+
+
+.site-navigation.toggled ul {
+	display: block;
+	margin: .5rem;
+    
+	
+
+}
+
+.site-navigation a {
+	display: block;
+	padding: 1rem;
+    font-family: 'Kdam Thmor Pro', sans-serif;	font-size: 1.5rem;
+	text-decoration: none;
+	color: #282828;
+   
+}
+
+.menu-toggle {
+	display: block;
+	background-color: transparent;
+	border: 0;
+	padding: 1rem;
+    
+    
+    
+	
+	
+}
+
+.menu-toggle:focus {
+	border: 0;
+	outline: 1px solid;
+    
+}
+/* Desktop view */
+@media (min-width: 50em) {
+
+
+
+	.menu-toggle {
+		display: none;
+        
+	}
+
+	.site-navigation {
+		flex: 1 1 auto;
+		padding: 0 1rem;
+	}
+
+	.site-navigation ul,
+	.site-navigation.toggled ul {
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+		top: 0;
+       
+		
+	}
+	
+
+	.site-navigation a {
+		line-height: 4.5rem; 
+		padding: 0 1rem;
+	}
+
+}
+
+/* main */
+.site-main .arrow {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 7;
+	display: block;
+	width: 3rem;
+	margin: 0 auto;
+	text-align: center;
+  opacity: 50%;
+}
+
+
+
+.arrow svg {
+	vertical-align: middle;
+	animation: bounce 2s ;
+	animation-iteration-count: infinite;
+
+}
+
+@keyframes bounce {
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-12px);
+  }
+}
+
+.site-main .arrow:hover::after{
+  opacity: 100%;
+  color: white;
+  
+}
+/* media-elements */
+.vid{
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0; 
+  z-index: 3;
+  padding-top: 4.5rem;
+   
+}
+
+/* footer */
+footer{
+
+  position:absolute;
+   bottom: 0;
+   color: white;
+   opacity: 70%;
+   z-index: 5;
+}
